@@ -1,12 +1,12 @@
-import express from 'express'
-import http from 'http'
-import bodyParser from 'body-parser'
-import cookieParser from 'cookie-parser'
-import compression from 'compression'
-import cors from 'cors'
-import mongoose from 'mongoose'
-import dotenv from 'dotenv'
-import router from './router'
+import express from "express"
+import http from "http"
+import bodyParser from "body-parser"
+import cookieParser from "cookie-parser"
+import compression from "compression"
+import cors from "cors"
+import mongoose from "mongoose"
+import dotenv from "dotenv"
+import router from "./router"
 
 const app = express()
 dotenv.config()
@@ -24,11 +24,11 @@ app.use(bodyParser.json())
 const server = http.createServer(app)
 
 server.listen(8080, () => {
-  console.log('Server is running on http://localhost:8080')
+  console.log("Server is running on http://localhost:8080")
 })
 
 mongoose.Promise = Promise
 mongoose.connect(process.env.MONGO_URI)
-mongoose.connection.on('error', (error) => console.log(error))
+mongoose.connection.on("error", (error) => console.log(error))
 
-app.use('/', router())
+app.use("/", router())
