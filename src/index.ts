@@ -1,11 +1,11 @@
+import bodyParser from "body-parser"
+import compression from "compression"
+import cookieParser from "cookie-parser"
+import cors from "cors"
+import dotenv from "dotenv"
 import express from "express"
 import http from "http"
-import bodyParser from "body-parser"
-import cookieParser from "cookie-parser"
-import compression from "compression"
-import cors from "cors"
 import mongoose from "mongoose"
-import dotenv from "dotenv"
 import router from "./router"
 
 const app = express()
